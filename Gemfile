@@ -108,6 +108,9 @@ gem 'em-websocket', :git => 'git://github.com/igrigorik/em-websocket', :ref => '
 
 group :test, :development do
   gem 'jasmine', '1.1.0.rc3'
+  #gem 'perftools.rb'
+  gem 'rack-perftools_profiler', :require => 'rack/perftools_profiler'
+
 end
 
 group :test do

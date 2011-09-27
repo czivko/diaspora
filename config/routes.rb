@@ -169,6 +169,9 @@ Diaspora::Application.routes.draw do
   if AppConfig[:mount_resque_web]
     mount Resque::Server.new, :at => '/resque-jobs', :as => "resque_web"
   end
+  
+  require 'lib/batch_receive_perf_test.rb'
+  mount BatchProfiler.new, :at => '/profile'
 
   # Logout Page (go mobile)
   get 'logged_out' => 'users#logged_out', :as => 'logged_out'
